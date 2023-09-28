@@ -1,0 +1,31 @@
+<div class="mb-4">
+  <p class="text-xl text-gray-500 mb-4 text-center">Calcular si un número es par o impar</p>
+
+</div>
+
+<div class="mb-4 flex space-x-2 items-center">
+  <mat-form-field appearance="fill" class="flex-grow">
+    <mat-label>Ingrese un número (máximo 4 dígitos)</mat-label>
+    <input matInput [(ngModel)]="numero" (input)="onInputChange()" type="number" max="9999">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="agregarNumero()" class="custom-button-dos text-white font-bold py-2 px-4 rounded-lg">
+    <mat-icon>visibility</mat-icon>
+  </button>
+
+  <button mat-raised-button color="warn" (click)="resetearNumeros()" class="custom-button text-white font-bold py-2 px-4 rounded-lg">
+    <mat-icon>settings_backup_restore</mat-icon>
+  </button>
+</div>
+
+<div class="mb-4 resultado w-full" *ngIf="mostrarResultado">
+  <h2 class="text-xl resultado-text mb-2">Resultado:</h2>
+  <div class="flex space-x-2">
+    <div *ngFor="let num of numeros" class="rounded-lg bg-gray-200 px-2 py-1">
+      {{ num }} - {{ num % 2 === 0 ? 'Par' : 'Impar' }}
+    </div>
+  </div>
+  <div class="w-full h-40 mt-24  ">
+    <img src="assets/img/completed.svg" alt="completed" class="w-full h-full">
+  </div>
+</div>

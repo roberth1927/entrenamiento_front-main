@@ -1,0 +1,65 @@
+<div class="px-6 py-4 mt-6">
+  <form [formGroup]="form">
+    <mat-form-field class="w-full mb-6">
+      <mat-label>Código</mat-label>
+      <input matInput formControlName="codigo" (input)="onCodigoInput($event)" />
+      <mat-icon color="primary" matSuffix>developer_mode</mat-icon>
+      <mat-error *ngIf="form.get('codigo')?.invalid && form.get('codigo')?.touched">
+        El código debe ser alfanumérico y en mayúsculas
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-full mb-6">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombres" />
+      <mat-icon color="primary" matSuffix>badge</mat-icon>
+      <mat-error *ngIf="form.get('nombres')?.invalid && form.get('nombres')?.touched">
+        Este campo es requerido
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-full mb-6">
+      <mat-label>Camiseta</mat-label>
+      <input matInput formControlName="camiseta" />
+      <mat-icon color="primary" matSuffix>checkroom</mat-icon>
+      <mat-error *ngIf="form.get('camiseta')?.invalid && form.get('camiseta')?.touched">
+        Este campo es requerido
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-full mb-6">
+      <mat-label>Equipo</mat-label>
+      <mat-select formControlName="idEquipo" (selectionChange)="checkCampeonatosVisibility($event.value)">
+        <mat-option *ngFor="let equipo of equipos" [value]="equipo.idEquipo">
+          {{ equipo.nombre }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('idEquipo')?.invalid && form.get('idEquipo')?.touched">
+        Este campo es requerido
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-full mb-6" *ngIf="showCampeonatos">
+      <mat-label>Campeonatos</mat-label>
+      <input matInput formControlName="campeonatos" />
+      <mat-icon color="primary" matSuffix>format_list_numbered</mat-icon>
+      <mat-error *ngIf="form.get('campeonatos')?.invalid && form.get('campeonatos')?.touched">
+        Este campo es requerido
+      </mat-error>
+    </mat-form-field>
+
+    <div class="flex justify-between mt-8">
+      <button class="custom-button-dos text-white font-bold py-2 px-4 w-1/2 rounded-lg mr-2" (click)="onSubmit()"
+        [disabled]="form.invalid || fetching === 'pending'">
+        <span *ngIf="fetching !== 'pending'">Guardar</span>
+        <span *ngIf="fetching === 'pending'" class="flex items-center justify-center">
+          <mat-icon>save</mat-icon>
+          <span>Guardando...</span>
+        </span>
+      </button>
+      <button class="custom-button text-white font-bold py-2 px-4 w-1/2 rounded-lg" (click)="cancel()">
+        <span>Cancelar</span>
+      </button>
+    </div>
+  </form>
+</div>

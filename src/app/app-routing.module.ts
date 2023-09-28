@@ -8,6 +8,12 @@ const routes: Routes = [
     loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule)
   },
 
+
+  {
+    path: '/ejercicios',
+    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule)
+  },
+
  /*  {
     path: '**',
     component: ErrorPageComponent

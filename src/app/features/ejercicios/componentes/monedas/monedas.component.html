@@ -1,0 +1,18 @@
+<div class="container text-center">
+  <p class="text-xl text-gray-500 mb-4">Encuentra la moneda más pesada</p>
+  <p>Se tiene un conjunto de monedas: [M1, M2, M3, M4, M5, M6, M7, M8, M9]</p>
+  <p>Todas las monedas pesan lo mismo, excepto una que es más pesada.</p>
+  <p>Usa una balanza de platos para encontrar la moneda más pesada en solo dos pesajes.</p>
+
+  <button mat-raised-button color="primary" (click)="encontrarMonedaMasPesada()"
+    class="custom-button-dos text-white font-bold py-2 px-4 rounded-lg">
+    <mat-icon>find_in_page</mat-icon>
+  </button>
+  <div *ngIf="resultado" class="resultado">
+    <p class="resultado-text">La moneda más pesada es:</p>
+    <p class="resultado-moneda">{{ resultado }}</p>
+    <div class="w-full h-40 mt-24  ">
+      <img src="assets/img/completed.svg" alt="completed" class="w-full h-full">
+    </div>
+  </div>
+</div>

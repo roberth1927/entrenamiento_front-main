@@ -1,1 +1,43 @@
-<p>list-players works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="codigo">
+    <th mat-header-cell *matHeaderCellDef> Código </th>
+    <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombres">
+    <th mat-header-cell *matHeaderCellDef class="limit-nombres-column"> Nombres </th>
+    <td mat-cell *matCellDef="let element" class="limit-nombres-column" > {{element.nombres}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="camiseta" >
+    <th mat-header-cell *matHeaderCellDef> Camisa </th>
+    <td mat-cell *matCellDef="let element" > {{element.camiseta}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombreEquipo">
+    <th mat-header-cell *matHeaderCellDef> Equipo  </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombreEquipo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="campeonatos">
+    <th mat-header-cell *matHeaderCellDef> Campeonatos </th>
+    <td mat-cell *matCellDef="let element"> {{element.campeonatos}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary" (click)="openDialog(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-spinner *ngIf="loadingData" class="mx-auto mt-4"></mat-spinner>
+
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 50, 100, 200]" showFirstLastButtons></mat-paginator>
+

@@ -13,8 +13,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MatToolbarModule,
+    RouterModule,
+    MatIconModule,
 
-    RouterModule
   ],
   exports: [
     HeaderDasboardComponent

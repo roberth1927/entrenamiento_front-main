@@ -1,27 +1,45 @@
-# Entrenamiento
+# Prueba Tecnica FrontEnd
+Este proyecto consta de dos módulos principales:
+## Administración de Usuarios
+Descripción: Este módulo proporciona una interfaz de usuario para administrar usuarios. Las principales funcionalidades incluyen listar usuarios, editar usuarios existentes y crear nuevos usuarios.
+## Resolución de Problemas
+Descripción: En este módulo, los usuarios pueden acceder a problemas de lógica y encontrar soluciones para los mismos. Puede ser una plataforma de práctica para desafíos de resolución de problemas o una herramienta de enseñanza para problemas de lógica.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+## Requisitos Previos
+Asegúrate de tener instalado lo siguiente en tu sistema:
+1. Node.js (v14.0.0 o superior)
+2. npm (v7.0.0 o superior)
 
-## Development server
+## Instalación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Clona este repositorio en tu máquina local:
+   ```bash
+    https://github.com/roberth1927/entrenamiento_front-main.git
+    ```
 
-## Code scaffolding
+2. Navega al directorio del proyecto:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    ```bash
+    cd entrenamiento_front-main
+    ```
+3.  Instala las dependencias del proyecto:
+   
+    ```bash
+    npm install
+     ```
+4.  Ejecuta la aplicacion:
+   
+    ```bash
+    npm start
+     ```
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+5.  Abre un navegador y navega a [http://localhost:4200/] para acceder a la aplicación.
 
-## Running unit tests
+## Versiones
+Angular: 12.2.0
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contacto
 
-## Running end-to-end tests
+Si necesitas acceder al archivo environment.ts o tienes alguna pregunta, no dudes en contactarnos a través del correo electrónico: [robinmoralesquiroz@gmail.com]. 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -1,0 +1,38 @@
+<div class="w-full flex flex-col items-center justify-center mt-2">
+  <p class="text-xl text-gray-500 mb-4">Calcular Anagramas</p>
+  <div class="mb-4 flex space-x-2 items-center">
+    <mat-form-field appearance="fill" class="w-64">
+      <mat-label>Cadena 1</mat-label>
+      <input matInput [(ngModel)]="cadena1">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="w-64">
+      <mat-label>Cadena 2</mat-label>
+      <input matInput [(ngModel)]="cadena2">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="verificarAnagramas()"
+      class="custom-button-dos text-white font-bold py-2 px-4 rounded-lg">
+      <mat-icon>check</mat-icon>
+    </button>
+    <button mat-raised-button color="warn" (click)="resetearFormulario()"
+      class="custom-button text-white font-bold py-2 px-4 rounded-lg">
+      <mat-icon>settings_backup_restore</mat-icon>
+    </button>
+  </div>
+
+  <div *ngIf="mostrarResultado" class="resultado w-full text-center ">
+    <ng-container *ngIf="sonAnagramas; else noSonAnagramas" class="mt-2">
+      <div class="text-green-600 mt-2">
+        Las cadenas {{ cadena1 }} y {{ cadena2 }} son anagramas.
+      </div>
+    </ng-container>
+    <ng-template #noSonAnagramas>
+      <div class="text-red-600">
+        Las cadenas {{ cadena1 }} y {{ cadena2 }} no son anagramas.
+      </div>
+    </ng-template>
+    <div class="w-full h-40 mt-24  ">
+      <img src="assets/img/completed.svg" alt="completed" class="w-full h-full">
+    </div>
+  </div>
+</div>

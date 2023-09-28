@@ -4,3 +4,30 @@
 @tailwind utilities;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$primary: #FC2169;
+$secundary: #193259;
+
+.custom-button {
+  background-color: $primary;
+  color: #FFFFFF;
+  transition: font-size 0.2s;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.custom-button:hover {
+  font-size: 17px;
+}
+
+.custom-button-dos {
+  background-color: $secundary;
+  color: #FFFFFF;
+  transition: font-size 0.2s;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.custom-button-dos:hover {
+  font-size: 17px;
+}

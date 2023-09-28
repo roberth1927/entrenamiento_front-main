@@ -1,0 +1,29 @@
+.custom-enter-animation {
+  animation-name: fadeIn;
+  animation-duration: 1000ms;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.custom-exit-animation {
+  animation-name: fadeOut;
+  animation-duration: 1000ms;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+

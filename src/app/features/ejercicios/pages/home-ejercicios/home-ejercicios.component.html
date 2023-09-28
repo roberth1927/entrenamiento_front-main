@@ -1,0 +1,25 @@
+<div class="lg:px-14 lg:py-6 lg:mt-9">
+  <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-md mx-auto lg:max-w-4xl">
+    <section class="d-flex flex-col text-center mt-5 mb-5 px-4 md:px-10 lg:px-15">
+      <p class="text-2xl font-semibold">EJERCICIOS</p>
+
+    </section>
+
+    <mat-stepper linear [linear]="isLinear" #stepper (selectionChange)="onStepChange($event)">
+      <mat-step [editable]="true">
+        <ng-template matStepLabel>Par - Impar</ng-template>
+        <app-ejercicio-par-impar></app-ejercicio-par-impar>
+      </mat-step>
+
+      <mat-step [editable]="true">
+        <ng-template matStepLabel>Anagrama</ng-template>
+        <app-ejercicio-anagrama></app-ejercicio-anagrama>
+      </mat-step>
+
+      <mat-step [editable]="true">
+        <ng-template matStepLabel>Monedas</ng-template>
+        <app-monedas></app-monedas>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>

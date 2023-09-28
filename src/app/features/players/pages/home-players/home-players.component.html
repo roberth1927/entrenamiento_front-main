@@ -1,11 +1,11 @@
 <div class="p-0 lg:p-0 h-full relative">
   <app-side-menu class="h-full" (isChanged)="isChanged($event)" #side>
     <ng-container main>
-      <mat-card class="px-6 py-6 lg:px-12 lg:py-8 ">
+      <mat-card class="custom-style">
         <app-header-card ></app-header-card>
-
-        <app-list-users></app-list-users>
+        <app-list-players></app-list-players>
       </mat-card>
     </ng-container>
+    <ng-container side-content></ng-container>
   </app-side-menu>
 </div>

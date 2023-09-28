@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ComponentsModule } from '../../components/components.module';
 import {MatCardModule} from '@angular/material/card';
 import { HomePlayersComponent } from './home-players.component';
+import { SideMenuModule } from 'src/app/shared/side-menu/side-menu.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { HomePlayersComponent } from './home-players.component';
   imports: [
     CommonModule,
     ComponentsModule,
-    MatCardModule
+    MatCardModule,
+    SideMenuModule
   ]
 })
 export class HomePlayersModule { }
