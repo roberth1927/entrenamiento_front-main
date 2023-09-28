@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiPlayersTeams: 'http://143.244.154.127:38299'
+  apiPlayersTeams: ''
 
 };
 
