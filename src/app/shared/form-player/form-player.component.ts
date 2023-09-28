@@ -21,8 +21,10 @@ import Swal from "sweetalert2";
 export class FormPlayerComponent implements OnInit {
   @Output() formSubmitted = new EventEmitter<any>();
   @Input() fetching = "";
+  @Input() idEquipo: number | null = null;
   form!: FormGroup;
   showCampeonatos = false;
+  showCampeon = false;
   equipos: Team[] = [];
 
   constructor(
@@ -76,17 +78,12 @@ export class FormPlayerComponent implements OnInit {
   }
 
   checkCampeonatosVisibility(id: any) {
-    this.playersService.getTeams().subscribe((equipos: Team[]) => {
-      this.equipos = equipos.sort((a, b) => a.nombre.localeCompare(b.nombre));
-    });
-    let { idEquipo, nombre } = this.equipos.find(
-      (equipo) => equipo.idEquipo === id
-    );
+    let { idEquipo, nombre } = this.equipos.find((equipo) => equipo.idEquipo === id);
     if (nombre) {
       const nombreE = nombre.toLowerCase();
       this.showCampeonatos = nombreE.startsWith("a") || nombreE.startsWith("b");
       if (this.showCampeonatos) {
-        this.form.get("campeonatos")?.setValue(null);
+        if(!this.idEquipo){this.form.get("campeonatos")?.setValue(null)}
         this.form.get("campeonatos")?.setValidators([Validators.required]);
       } else {
         this.form.get("campeonatos")?.clearValidators();
@@ -100,6 +97,7 @@ export class FormPlayerComponent implements OnInit {
   loadTeams() {
     this.playersService.getTeams().subscribe((equipos: Team[]) => {
       this.equipos = equipos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+      if(this.idEquipo){this.checkCampeonatosVisibility(this.idEquipo)}
     });
   }
 

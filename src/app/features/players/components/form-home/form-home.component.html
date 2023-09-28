@@ -2,5 +2,5 @@
   <span class="spanTitle">{{inputdata.title}}</span>
 </mat-toolbar>
 <div mat-dialog-content>
-    <app-form-player #playerForm (formSubmitted)="handleFormSubmit($event)"></app-form-player>
+    <app-form-player #playerForm (formSubmitted)="handleFormSubmit($event)"  [idEquipo]="playerData?.idEquipo"></app-form-player>
 </div>

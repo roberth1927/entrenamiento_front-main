@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit, ViewChild } from "@angular/core";
+import { EventEmitter, Output } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { PlayersService } from "src/app/features/services/players.service";
 import { FormPlayerComponent } from "src/app/shared/form-player/form-player.component";
@@ -11,6 +12,7 @@ import { Player } from "src/core/reqResPlayers.interface";
 })
 export class FormHomeComponent implements OnInit {
   @ViewChild("playerForm") playerForm!: FormPlayerComponent;
+  @Output() idEquipoEmitter: EventEmitter<number> = new EventEmitter<number>();
 
   playerData: Player;
   inputdata: any;
@@ -36,6 +38,7 @@ export class FormHomeComponent implements OnInit {
         idEquipo: this.playerData.idEquipo,
         campeonatos: this.playerData.campeonatos,
       });
+
     }
   }
 
